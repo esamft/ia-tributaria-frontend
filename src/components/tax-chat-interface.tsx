@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { 
@@ -15,7 +16,8 @@ import {
   Download,
   Check,
   Database,
-  Settings
+  Settings,
+  Trash2
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ThemeToggle } from './theme-toggle'
@@ -60,34 +62,35 @@ export function TaxChatInterface() {
     'fatca-crs-ipld',
     'fatca-crs-ipld1'
   ])
-  const [conversations] = useState<Conversation[]>([
-    {
-      id: '1',
-      title: 'Residência Fiscal Portugal',
-      lastMessage: 'Quais são os requisitos para...',
-      timestamp: new Date(Date.now() - 86400000)
-    },
-    {
-      id: '2', 
-      title: 'Tratado Brasil-EUA',
-      lastMessage: 'Como funciona o tie-breaker...',
-      timestamp: new Date(Date.now() - 172800000)
-    },
-    {
-      id: '3',
-      title: 'Exit Tax Brasileiro',
-      lastMessage: 'Quando se aplica o exit tax...',
-      timestamp: new Date(Date.now() - 259200000)
-    },
-    {
-      id: '4',
-      title: 'Planejamento Fiscal Internacional',
-      lastMessage: 'Estratégias para otimização...',
-      timestamp: new Date(Date.now() - 345600000)
+  // Carregar conversas do localStorage
+  const [conversations, setConversations] = useState<Conversation[]>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('tax-chat-conversations')
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved)
+          // Converter strings de data de volta para objetos Date
+          return parsed.map((conv: any) => ({
+            ...conv,
+            timestamp: new Date(conv.timestamp)
+          }))
+        } catch (e) {
+          console.error('Erro ao carregar conversas:', e)
+          return []
+        }
+      }
     }
-  ])
+    return []
+  })
   const [activeConversation, setActiveConversation] = useState<string | null>(null)
   const scrollAreaRef = useRef<HTMLDivElement>(null)
+
+  // Salvar conversas no localStorage sempre que mudarem
+  useEffect(() => {
+    if (conversations.length > 0) {
+      localStorage.setItem('tax-chat-conversations', JSON.stringify(conversations))
+    }
+  }, [conversations])
 
   useEffect(() => {
     if (scrollAreaRef.current) {
@@ -173,6 +176,26 @@ export function TaxChatInterface() {
       }
 
       setMessages(prev => [...prev, assistantMessage])
+      
+      // Criar ou atualizar conversa
+      if (!activeConversation) {
+        // Criar nova conversa
+        const newConversation: Conversation = {
+          id: Date.now().toString(),
+          title: input.slice(0, 50) + (input.length > 50 ? '...' : ''),
+          lastMessage: assistantMessage.content.slice(0, 50) + '...',
+          timestamp: new Date()
+        }
+        setConversations(prev => [newConversation, ...prev])
+        setActiveConversation(newConversation.id)
+      } else {
+        // Atualizar conversa existente
+        setConversations(prev => prev.map(conv => 
+          conv.id === activeConversation 
+            ? { ...conv, lastMessage: assistantMessage.content.slice(0, 50) + '...', timestamp: new Date() }
+            : conv
+        ))
+      }
     } catch (error) {
       console.error('Erro ao enviar mensagem:', error)
       
@@ -195,6 +218,27 @@ export function TaxChatInterface() {
     setMessages([])
     setActiveConversation(null)
     setSidebarOpen(false)
+  }
+
+  const deleteConversation = (conversationId: string, e: React.MouseEvent) => {
+    e.stopPropagation() // Evitar que o clique ative a conversa
+    setConversations(prev => prev.filter(conv => conv.id !== conversationId))
+    if (activeConversation === conversationId) {
+      setMessages([])
+      setActiveConversation(null)
+    }
+    // Limpar localStorage se não houver mais conversas
+    if (conversations.length === 1) {
+      localStorage.removeItem('tax-chat-conversations')
+    }
+  }
+
+  const loadConversation = (conversationId: string) => {
+    // Por enquanto, apenas marcar como ativa
+    // Em uma implementação completa, você carregaria as mensagens do localStorage
+    setActiveConversation(conversationId)
+    // Aqui você poderia carregar as mensagens específicas da conversa
+    setMessages([]) // Por enquanto, limpar mensagens
   }
 
   const [copiedMessageId, setCopiedMessageId] = useState<string | null>(null)
@@ -261,22 +305,40 @@ export function TaxChatInterface() {
             {/* Conversation History */}
             <ScrollArea className="flex-1 px-2">
               <div className="space-y-1">
-                {conversations.map((conv) => (
-                  <button
+                {conversations.length === 0 ? (
+                  <div className="text-center py-8 text-sm text-muted-foreground">
+                    Nenhuma conversa ainda.
+                    <br />
+                    Comece uma nova!
+                  </div>
+                ) : (
+                  conversations.map((conv) => (
+                  <div
                     key={conv.id}
-                    onClick={() => setActiveConversation(conv.id)}
-                    className={`w-full text-left p-3 rounded-lg hover:bg-accent/50 transition-colors group ${
+                    className={`relative group ${
                       activeConversation === conv.id ? 'bg-accent' : ''
                     }`}
                   >
-                    <div className="font-medium text-sm truncate mb-1">
-                      {conv.title}
-                    </div>
-                    <div className="text-xs text-muted-foreground truncate">
-                      {conv.lastMessage}
-                    </div>
-                  </button>
-                ))}
+                    <button
+                      onClick={() => loadConversation(conv.id)}
+                      className="w-full text-left p-3 rounded-lg hover:bg-accent/50 transition-colors"
+                    >
+                      <div className="font-medium text-sm truncate mb-1 pr-8">
+                        {conv.title}
+                      </div>
+                      <div className="text-xs text-muted-foreground truncate">
+                        {conv.lastMessage}
+                      </div>
+                    </button>
+                    <button
+                      onClick={(e) => deleteConversation(conv.id, e)}
+                      className="absolute right-2 top-3 p-1 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-destructive/20 rounded"
+                      title="Deletar conversa"
+                    >
+                      <Trash2 className="w-4 h-4 text-destructive" />
+                    </button>
+                  </div>
+                )))}
               </div>
             </ScrollArea>
 
@@ -295,6 +357,12 @@ export function TaxChatInterface() {
         {/* Top Header with System Name */}
         <div className="absolute top-4 right-6 z-10">
           <div className="flex items-center gap-3">
+            <Link
+              href="/landing"
+              className="inline-flex items-center justify-center text-xs rounded-md px-3 py-1.5 border border-border/30 bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+            >
+              Sobre
+            </Link>
             <Button
               variant="outline"
               size="sm"
