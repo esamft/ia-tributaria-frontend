@@ -1,0 +1,124 @@
+{
+  "processed_date": "2025-08-04T09:10:16.642910",
+  "total_documents": 10,
+  "total_chunks": 4317,
+  "documents": [
+    {
+      "filename": "FATCA-e-CRS_-Leis-de-conformidade-fiscais-que-tem-deixado-os-agentes-de-compliance-ou-compliance-officer-com-dor-de-cabeca-IPLD1.txt",
+      "processed_filename": "FATCA-e-CRS_-Leis-de-conformidade-fiscais-que-tem-deixado-os-agentes-de-compliance-ou-compliance-officer-com-dor-de-cabeca-IPLD1_processed.json",
+      "chunks": 1,
+      "size": 150,
+      "topics": [
+        "FATCA",
+        "Compliance",
+        "Conformidade Fiscal",
+        "CRS",
+        "Common Reporting Standard",
+        "Troca de Informações"
+      ]
+    },
+    {
+      "filename": "Lei-14.754_2023-e-tributacao-de-controladas-de-pessoas-fisicas-no-exterior-parte-1.txt",
+      "processed_filename": "Lei-14.754_2023-e-tributacao-de-controladas-de-pessoas-fisicas-no-exterior-parte-1_processed.json",
+      "chunks": 1,
+      "size": 121,
+      "topics": [
+        "Lei 14.754/2023",
+        "CFC",
+        "Controlled Foreign Company",
+        "Tributação Internacional",
+        "Imposto de Renda",
+        "Direito Tributário"
+      ]
+    },
+    {
+      "filename": "O-BEPS-e-o-Direito-Tributario-Brasileiro.txt",
+      "processed_filename": "O-BEPS-e-o-Direito-Tributario-Brasileiro_processed.json",
+      "chunks": 1,
+      "size": 79,
+      "topics": [
+        "BEPS",
+        "Base Erosion",
+        "Profit Shifting"
+      ]
+    },
+    {
+      "filename": "EY_Worldwide_Personal_Tax_Guide_2025.pdf",
+      "processed_filename": "EY_Worldwide_Personal_Tax_Guide_2025_processed.json",
+      "chunks": 3583,
+      "size": 4567786,
+      "topics": [
+        "Tributação Internacional",
+        "Direito Tributário"
+      ]
+    },
+    {
+      "filename": "O-que-e-CRS-Common-Reporting-Standard_-IPLD.txt",
+      "processed_filename": "O-que-e-CRS-Common-Reporting-Standard_-IPLD_processed.json",
+      "chunks": 1,
+      "size": 66,
+      "topics": [
+        "CRS",
+        "Common Reporting Standard",
+        "Troca de Informações"
+      ]
+    },
+    {
+      "filename": "Tributacao_Internacional.pdf",
+      "processed_filename": "Tributacao_Internacional_processed.json",
+      "chunks": 726,
+      "size": 914783,
+      "topics": [
+        "Tributação Internacional",
+        "Imposto de Renda",
+        "Direito Tributário"
+      ]
+    },
+    {
+      "filename": "Estrategias-offshore_-Planejamento-patrimonial-e-fiscal-no-cenario-global.txt",
+      "processed_filename": "Estrategias-offshore_-Planejamento-patrimonial-e-fiscal-no-cenario-global_processed.json",
+      "chunks": 1,
+      "size": 111,
+      "topics": [
+        "Offshore",
+        "Planejamento Patrimonial",
+        "Estruturas Internacionais"
+      ]
+    },
+    {
+      "filename": "L14754.txt",
+      "processed_filename": "L14754_processed.json",
+      "chunks": 1,
+      "size": 71,
+      "topics": [
+        "Tributação Internacional",
+        "Direito Tributário"
+      ]
+    },
+    {
+      "filename": "FATCA-e-CRS_-Leis-de-conformidade-fiscais-que-tem-deixado-os-agentes-de-compliance-ou-compliance-officer-com-dor-de-cabeca-IPLD.txt",
+      "processed_filename": "FATCA-e-CRS_-Leis-de-conformidade-fiscais-que-tem-deixado-os-agentes-de-compliance-ou-compliance-officer-com-dor-de-cabeca-IPLD_processed.json",
+      "chunks": 1,
+      "size": 150,
+      "topics": [
+        "FATCA",
+        "Compliance",
+        "Conformidade Fiscal",
+        "CRS",
+        "Common Reporting Standard",
+        "Troca de Informações"
+      ]
+    },
+    {
+      "filename": "Lei-14.754_23-Novo-regime-tributario-para-investimentos-no-exterior-Pessoas-juridicas-e-fisicas.txt",
+      "processed_filename": "Lei-14.754_23-Novo-regime-tributario-para-investimentos-no-exterior-Pessoas-juridicas-e-fisicas_processed.json",
+      "chunks": 1,
+      "size": 110,
+      "topics": [
+        "Lei 14.754/2023",
+        "CFC",
+        "Controlled Foreign Company"
+      ]
+    }
+  ]
+}

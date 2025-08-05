@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "filename": "O-BEPS-e-o-Direito-Tributario-Brasileiro.txt",
+    "type": "tributario",
+    "source": "RAG Tributária",
+    "processed_date": "2025-08-04T09:10:03.897168",
+    "topics": [
+      "BEPS",
+      "Base Erosion",
+      "Profit Shifting"
+    ],
+    "country": "Brasil",
+    "language": "pt-BR",
+    "format": "TXT",
+    "content_size": 79,
+    "estimated_pages": 1
+  },
+  "content": "https://www.institutoiat.org/post/o-beps-e-o-direito-tribut%C3%A1rio-brasileiro",
+  "chunks": [
+    "https://www.institutoiat.org/post/o-beps-e-o-direito-tribut%C3%A1rio-brasileiro"
+  ],
+  "chunk_count": 1
+}

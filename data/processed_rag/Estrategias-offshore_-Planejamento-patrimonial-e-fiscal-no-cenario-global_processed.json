@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "filename": "Estrategias-offshore_-Planejamento-patrimonial-e-fiscal-no-cenario-global.txt",
+    "type": "tributario",
+    "source": "RAG Tributária",
+    "processed_date": "2025-08-04T09:10:16.640696",
+    "topics": [
+      "Offshore",
+      "Planejamento Patrimonial",
+      "Estruturas Internacionais"
+    ],
+    "country": "Brasil",
+    "language": "pt-BR",
+    "format": "TXT",
+    "content_size": 111,
+    "estimated_pages": 1
+  },
+  "content": "https://www.migalhas.com.br/depeso/421648/estrategia-offshore-planejamento-patrimonial-fiscal-no-cenario-global",
+  "chunks": [
+    "https://www.migalhas.com.br/depeso/421648/estrategia-offshore-planejamento-patrimonial-fiscal-no-cenario-global"
+  ],
+  "chunk_count": 1
+}

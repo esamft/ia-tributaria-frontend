@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "filename": "O-que-e-CRS-Common-Reporting-Standard_-IPLD.txt",
+    "type": "tributario",
+    "source": "RAG Tributária",
+    "processed_date": "2025-08-04T09:10:14.657439",
+    "topics": [
+      "CRS",
+      "Common Reporting Standard",
+      "Troca de Informações"
+    ],
+    "country": "Brasil",
+    "language": "pt-BR",
+    "format": "TXT",
+    "content_size": 66,
+    "estimated_pages": 1
+  },
+  "content": "https://ipld.com.br/artigos/o-que-e-crs-common-reporting-standard/",
+  "chunks": [
+    "https://ipld.com.br/artigos/o-que-e-crs-common-reporting-standard/"
+  ],
+  "chunk_count": 1
+}

@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "filename": "L14754.txt",
+    "type": "tributario",
+    "source": "RAG Tributária",
+    "processed_date": "2025-08-04T09:10:16.641424",
+    "topics": [
+      "Tributação Internacional",
+      "Direito Tributário"
+    ],
+    "country": "Brasil",
+    "language": "pt-BR",
+    "format": "TXT",
+    "content_size": 71,
+    "estimated_pages": 1
+  },
+  "content": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14754.htm",
+  "chunks": [
+    "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14754.htm"
+  ],
+  "chunk_count": 1
+}
