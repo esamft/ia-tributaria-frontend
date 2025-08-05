@@ -1,0 +1,175 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Paleta Tributária Elegante - Tons Terrosos */
+:root {
+  --radius: 0.5rem;
+  
+  /* Paleta baseada no CLAUDE.md */
+  --background: oklch(0.97 0.02 45); /* #FBF8F6 - Creme */
+  --foreground: oklch(0.25 0.05 30); /* #3E2723 - Marrom escuro */
+  --card: oklch(1 0 0); /* Branco puro para cards */
+  --card-foreground: oklch(0.25 0.05 30);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.25 0.05 30);
+  
+  /* Verde oliva como primary (#689F38) */
+  --primary: oklch(0.55 0.15 100); /* Verde oliva */
+  --primary-foreground: oklch(1 0 0);
+  
+  /* Areia como secondary (#D7CCC8) */
+  --secondary: oklch(0.85 0.02 45); /* Areia */
+  --secondary-foreground: oklch(0.35 0.05 30); /* Marrom médio */
+  
+  /* Bege claro como muted (#EFEBE9) */
+  --muted: oklch(0.92 0.02 45); /* Bege claro */
+  --muted-foreground: oklch(0.5 0.03 30);
+  
+  /* Dourado suave como accent (#C9A961) */
+  --accent: oklch(0.72 0.08 65); /* Dourado suave */
+  --accent-foreground: oklch(0.25 0.05 30);
+  
+  --destructive: oklch(0.577 0.245 27.325);
+  
+  /* Terracota para bordas (#A1887F) */
+  --border: oklch(0.65 0.03 40); /* Terracota */
+  --input: oklch(0.85 0.02 45);
+  --ring: oklch(0.55 0.15 100); /* Verde oliva */
+  
+  /* Charts com paleta terrosa */
+  --chart-1: oklch(0.55 0.15 100); /* Verde oliva */
+  --chart-2: oklch(0.72 0.08 65);  /* Dourado */
+  --chart-3: oklch(0.65 0.03 40);  /* Terracota */
+  --chart-4: oklch(0.35 0.05 30);  /* Marrom médio */
+  --chart-5: oklch(0.25 0.05 30);  /* Marrom escuro */
+  
+  /* Sidebar com tons terrosos */
+  --sidebar: oklch(0.97 0.02 45);
+  --sidebar-foreground: oklch(0.25 0.05 30);
+  --sidebar-primary: oklch(0.55 0.15 100);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.92 0.02 45);
+  --sidebar-accent-foreground: oklch(0.25 0.05 30);
+  --sidebar-border: oklch(0.65 0.03 40);
+  --sidebar-ring: oklch(0.55 0.15 100);
+}
+
+.dark {
+  /* Modo escuro com tons terrosos mais profundos */
+  --background: oklch(0.12 0.03 30); /* Marrom muito escuro */
+  --foreground: oklch(0.95 0.02 45); /* Creme claro */
+  --card: oklch(0.18 0.03 30);
+  --card-foreground: oklch(0.95 0.02 45);
+  --popover: oklch(0.18 0.03 30);
+  --popover-foreground: oklch(0.95 0.02 45);
+  
+  /* Verde oliva mais claro no dark */
+  --primary: oklch(0.65 0.18 100);
+  --primary-foreground: oklch(0.12 0.03 30);
+  
+  --secondary: oklch(0.25 0.03 30);
+  --secondary-foreground: oklch(0.85 0.02 45);
+  --muted: oklch(0.22 0.03 30);
+  --muted-foreground: oklch(0.7 0.02 45);
+  
+  /* Dourado mais vibrante no dark */
+  --accent: oklch(0.75 0.12 65);
+  --accent-foreground: oklch(0.12 0.03 30);
+  
+  --destructive: oklch(0.65 0.2 25);
+  --border: oklch(0.3 0.03 30);
+  --input: oklch(0.25 0.03 30);
+  --ring: oklch(0.65 0.18 100);
+  
+  --chart-1: oklch(0.65 0.18 100);
+  --chart-2: oklch(0.75 0.12 65);
+  --chart-3: oklch(0.6 0.05 40);
+  --chart-4: oklch(0.5 0.03 30);
+  --chart-5: oklch(0.75 0.02 45);
+  
+  --sidebar: oklch(0.18 0.03 30);
+  --sidebar-foreground: oklch(0.95 0.02 45);
+  --sidebar-primary: oklch(0.65 0.18 100);
+  --sidebar-primary-foreground: oklch(0.12 0.03 30);
+  --sidebar-accent: oklch(0.25 0.03 30);
+  --sidebar-accent-foreground: oklch(0.85 0.02 45);
+  --sidebar-border: oklch(0.3 0.03 30);
+  --sidebar-ring: oklch(0.65 0.18 100);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    transition: colors 200ms ease-out, border-color 200ms ease-out;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Fontes elegantes */
+  .font-serif {
+    font-family: "Georgia", "Times New Roman", serif;
+  }
+  
+  /* Scrollbars elegantes */
+  ::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent;
+  }
+}

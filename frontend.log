@@ -1,0 +1,37 @@
+
+> ia-tributaria-frontend@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.4.5 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.6:3000
+
+ ✓ Starting...
+ ✓ Ready in 765ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1613ms
+ HEAD / 200 in 1825ms
+ GET / 200 in 51ms
+ ✓ Compiled /api/chat in 115ms
+ POST /api/chat 200 in 155ms
+ ✓ Compiled in 21ms
+ ✓ Compiled / in 17ms
+ GET / 200 in 109ms
+ ✓ Compiled in 23ms
+ ✓ Compiled in 17ms
+ ✓ Compiled in 88ms
+ GET / 200 in 162ms
+ GET / 200 in 45ms
+ GET / 200 in 46ms
+ POST /api/chat 200 in 2901ms
+ ✓ Compiled in 21ms
+ ✓ Compiled in 19ms
+ ✓ Compiled in 25ms
+ ✓ Compiled in 27ms
+ ✓ Compiled in 126ms
+ ✓ Compiled in 11ms
+ ✓ Compiled in 11ms
+ GET / 200 in 144ms
+ ✓ Compiled in 27ms
+ GET / 200 in 167ms
+[?25h
